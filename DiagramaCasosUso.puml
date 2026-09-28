@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Aspirante" as Asp
+actor "Reclutador" as Rec
+actor "Servicio de correo (API)" as API
+
+rectangle "TalentTrack" {
+    usecase "Registrarse y\ngestionar perfil" as UC1
+    usecase "Buscar oferta\nde empleo" as UC2
+    usecase "Notificación\nAutomática" as UC3
+    usecase "Gestionar\nvacantes" as UC4
+    usecase "Notificaciones\nAutomáticas" as UC5
+
+    UC2 ..> UC3
+    UC5 ..> API
+}
+
+Asp --> UC1
+Asp --> UC2
+Rec --> UC4
+Rec --> UC5
+@enduml

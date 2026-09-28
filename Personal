@@ -1,0 +1,39 @@
+@startuml Diagrama_Herencia_Personal
+
+skinparam classAttributeIconSize 0
+
+class Personal {
+  - Edad : int(3)
+  - Nombre : String(50)
+  - Apellidos : String(50)
+  - Correo : String(50)
+  - SeguroSocial : String(20)
+}
+
+class Trabajador {
+  - NumeroEmpleado : int(10)
+  - HorasTrabajo : int(5)
+}
+
+class Estudiante {
+  - Matricula : int(10)
+  - Grupo : int(5)
+  - Carrera : String(100)
+  - Semestre : String(20)
+}
+
+class PersonalConfianza {
+  - Rango : String(50)
+}
+
+class Administrador {
+  - Area : String(50)
+}
+
+' Relaciones de Herencia
+Personal <|-- Trabajador
+Personal <|-- Estudiante
+Trabajador <|-- PersonalConfianza
+Trabajador <|-- Administrador
+
+@enduml
